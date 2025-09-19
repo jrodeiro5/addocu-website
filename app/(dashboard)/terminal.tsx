@@ -7,12 +7,12 @@ export function Terminal() {
   const [terminalStep, setTerminalStep] = useState(0);
   const [copied, setCopied] = useState(false);
   const terminalSteps = [
-    'git clone https://github.com/nextjs/saas-starter',
-    'pnpm install',
-    'pnpm db:setup',
-    'pnpm db:migrate',
-    'pnpm db:seed',
-    'pnpm dev 🎉',
+    '# Install Addocu from Google Workspace Marketplace',
+    'Extensions > Addocu > ⚙️ Configure',
+    'Enter your Google Cloud API Key',
+    'Extensions > Addocu > 📊 Sync All Platforms',
+    'Review your comprehensive audit reports',
+    'Export & share with your team 🚀',
   ];
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export function Terminal() {
       setTerminalStep((prev) =>
         prev < terminalSteps.length - 1 ? prev + 1 : prev
       );
-    }, 500);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, [terminalStep]);
