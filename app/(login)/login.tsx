@@ -6,7 +6,7 @@ import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { CircleIcon, Loader2 } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 import { signIn, signUp } from './actions';
 import { ActionState } from '@/lib/auth/middleware';
 
@@ -24,7 +24,13 @@ export function Login({ mode = 'signin' }: { mode?: 'signin' | 'signup' }) {
     <div className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="flex justify-center">
-          <CircleIcon className="h-12 w-12" style={{ color: '#1A5DBB' }} />
+          {/* Addocu Logo */}
+          <div className="flex items-center space-x-2">
+            <div className="w-10 h-10 bg-gradient-to-br from-[#1A5DBB] to-[#00AEEF] rounded-lg flex items-center justify-center">
+              <div className="w-6 h-6 border-2 border-white rounded-sm"></div>
+            </div>
+            <span className="text-2xl font-bold text-[#1A5DBB]">Addocu</span>
+          </div>
         </div>
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
           {mode === 'signin'
@@ -59,11 +65,7 @@ export function Login({ mode = 'signin' }: { mode?: 'signin' | 'signup' }) {
                 defaultValue={state.email}
                 required
                 maxLength={50}
-                className="appearance-none rounded-full relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:z-10 sm:text-sm"
-                style={{ 
-                  focusRingColor: '#1A5DBB',
-                  focusBorderColor: '#1A5DBB'
-                }}
+                className="appearance-none rounded-full relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#1A5DBB] focus:border-[#1A5DBB] focus:z-10 sm:text-sm"
                 placeholder="Enter your email"
               />
             </div>
@@ -88,11 +90,7 @@ export function Login({ mode = 'signin' }: { mode?: 'signin' | 'signup' }) {
                 required
                 minLength={8}
                 maxLength={100}
-                className="appearance-none rounded-full relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:z-10 sm:text-sm"
-                style={{ 
-                  focusRingColor: '#1A5DBB',
-                  focusBorderColor: '#1A5DBB'
-                }}
+                className="appearance-none rounded-full relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#1A5DBB] focus:border-[#1A5DBB] focus:z-10 sm:text-sm"
                 placeholder="Enter your password"
               />
             </div>
@@ -105,11 +103,7 @@ export function Login({ mode = 'signin' }: { mode?: 'signin' | 'signup' }) {
           <div>
             <Button
               type="submit"
-              className="w-full flex justify-center items-center py-2 px-4 border border-transparent rounded-full shadow-sm text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2"
-              style={{ 
-                backgroundColor: '#1A5DBB',
-                focusRingColor: '#1A5DBB'
-              }}
+              className="w-full flex justify-center items-center py-2 px-4 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-[#1A5DBB] hover:bg-[#1A5DBB]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1A5DBB]"
               disabled={pending}
             >
               {pending ? (
@@ -145,12 +139,7 @@ export function Login({ mode = 'signin' }: { mode?: 'signin' | 'signup' }) {
               href={`${mode === 'signin' ? '/sign-up' : '/sign-in'}${
                 redirect ? `?redirect=${redirect}` : ''
               }${priceId ? `&priceId=${priceId}` : ''}`}
-              className="w-full flex justify-center py-2 px-4 border rounded-full shadow-sm text-sm font-medium bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2"
-              style={{ 
-                borderColor: '#1A5DBB',
-                color: '#1A5DBB',
-                focusRingColor: '#1A5DBB'
-              }}
+              className="w-full flex justify-center py-2 px-4 border border-[#1A5DBB] rounded-full shadow-sm text-sm font-medium text-[#1A5DBB] bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1A5DBB]"
             >
               {mode === 'signin'
                 ? 'Create an account'

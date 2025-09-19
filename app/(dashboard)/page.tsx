@@ -11,7 +11,7 @@ export default function HomePage() {
             <div className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
               <h1 className="text-4xl font-bold text-gray-900 tracking-tight sm:text-5xl md:text-6xl">
                 Audit Your Google Stack
-                <span className="block" style={{ color: '#1A5DBB' }}>In Seconds</span>
+                <span className="block text-[#1A5DBB]">In Seconds</span>
               </h1>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
                 Free and open-source Google Sheets Add-on for digital marketers. 
@@ -22,12 +22,11 @@ export default function HomePage() {
                 <a
                   href="https://workspace.google.com/marketplace"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Button
                     size="lg"
-                    variant="outline"
-                    className="text-lg rounded-full border-2"
-                    style={{ borderColor: '#1A5DBB', color: '#1A5DBB' }}
+                    className="text-lg rounded-full border-2 bg-[#1A5DBB] text-white hover:bg-[#1A5DBB]/90 border-[#1A5DBB]"
                   >
                     Install Free Add-on
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -46,7 +45,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-3 lg:gap-8">
             <div>
-              <div className="flex items-center justify-center h-12 w-12 rounded-md text-white" style={{ backgroundColor: '#1A5DBB' }}>
+              <div className="flex items-center justify-center h-12 w-12 rounded-md bg-[#1A5DBB] text-white">
                 <BarChart3 className="h-6 w-6" />
               </div>
               <div className="mt-5">
@@ -61,7 +60,7 @@ export default function HomePage() {
             </div>
 
             <div className="mt-10 lg:mt-0">
-              <div className="flex items-center justify-center h-12 w-12 rounded-md text-white" style={{ backgroundColor: '#4CAF50' }}>
+              <div className="flex items-center justify-center h-12 w-12 rounded-md bg-[#4CAF50] text-white">
                 <Settings className="h-6 w-6" />
               </div>
               <div className="mt-5">
@@ -76,7 +75,7 @@ export default function HomePage() {
             </div>
 
             <div className="mt-10 lg:mt-0">
-              <div className="flex items-center justify-center h-12 w-12 rounded-md text-white" style={{ backgroundColor: '#00AEEF' }}>
+              <div className="flex items-center justify-center h-12 w-12 rounded-md bg-[#00AEEF] text-white">
                 <FileSpreadsheet className="h-6 w-6" />
               </div>
               <div className="mt-5">
@@ -107,12 +106,15 @@ export default function HomePage() {
               </p>
             </div>
             <div className="mt-8 lg:mt-0 flex justify-center lg:justify-end">
-              <a href="https://github.com/jrodeiro5/addocu" target="_blank">
+              <a 
+                href="https://github.com/jrodeiro5/addocu" 
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   size="lg"
                   variant="outline"
-                  className="text-lg rounded-full border-2"
-                  style={{ borderColor: '#1A5DBB', color: '#1A5DBB' }}
+                  className="text-lg rounded-full border-2 border-[#1A5DBB] text-[#1A5DBB] hover:bg-[#1A5DBB] hover:text-white"
                 >
                   View on GitHub
                   <ArrowRight className="ml-3 h-6 w-6" />

@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { use, useState, Suspense } from 'react';
+import { useState, Suspense } from 'react';
 import { Button } from '@/components/ui/button';
-import { CircleIcon, Home, LogOut } from 'lucide-react';
+import { Home, LogOut } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,6 +17,17 @@ import { User } from '@/lib/db/schema';
 import useSWR, { mutate } from 'swr';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
+
+function AddocuLogo() {
+  return (
+    <div className="flex items-center space-x-2">
+      <div className="w-8 h-8 bg-gradient-to-br from-[#1A5DBB] to-[#00AEEF] rounded-lg flex items-center justify-center">
+        <div className="w-5 h-5 border-2 border-white rounded-sm"></div>
+      </div>
+      <span className="text-xl font-semibold text-gray-900">Addocu</span>
+    </div>
+  );
+}
 
 function UserMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,11 +45,14 @@ function UserMenu() {
       <>
         <Link
           href="/pricing"
-          className="text-sm font-medium text-gray-700 hover:text-gray-900"
+          className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
         >
           Features
         </Link>
-        <Button asChild className="rounded-full" style={{ backgroundColor: '#1A5DBB' }}>
+        <Button 
+          asChild 
+          className="rounded-full bg-[#1A5DBB] hover:bg-[#1A5DBB]/90 text-white"
+        >
           <Link href="/sign-up">Get Started</Link>
         </Button>
       </>
@@ -50,7 +64,7 @@ function UserMenu() {
       <DropdownMenuTrigger>
         <Avatar className="cursor-pointer size-9">
           <AvatarImage alt={user.name || ''} />
-          <AvatarFallback>
+          <AvatarFallback className="bg-[#1A5DBB] text-white">
             {user.email
               .split(' ')
               .map((n) => n[0])
@@ -80,14 +94,13 @@ function UserMenu() {
 
 function Header() {
   return (
-    <header className="border-b border-gray-200">
+    <header className="border-b border-gray-200 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center">
-          <CircleIcon className="h-6 w-6" style={{ color: '#1A5DBB' }} />
-          <span className="ml-2 text-xl font-semibold text-gray-900">Addocu</span>
+        <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+          <AddocuLogo />
         </Link>
         <div className="flex items-center space-x-4">
-          <Suspense fallback={<div className="h-9" />}>
+          <Suspense fallback={<div className="h-9 w-24 bg-gray-200 rounded animate-pulse" />}>
             <UserMenu />
           </Suspense>
         </div>
@@ -98,7 +111,7 @@ function Header() {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <section className="flex flex-col min-h-screen">
+    <section className="flex flex-col min-h-screen bg-gray-50">
       <Header />
       {children}
     </section>
