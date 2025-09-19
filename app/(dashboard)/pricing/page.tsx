@@ -3,14 +3,35 @@ import { Check } from 'lucide-react';
 import { getStripePrices, getStripeProducts } from '@/lib/payments/stripe';
 import { SubmitButton } from './submit-button';
 
-// Prices are fresh for one hour max
-export const revalidate = 3600;
+// Force dynamic rendering to avoid build-time API calls
+export const dynamic = 'force-dynamic';
+
+// Fallback data for when Stripe is unavailable
+const fallbackProducts = [
+  { id: 'base', name: 'Base' },
+  { id: 'plus', name: 'Plus' }
+];
+
+const fallbackPrices = [
+  { id: 'price_base', productId: 'base', unitAmount: 800, interval: 'month', trialPeriodDays: 7 },
+  { id: 'price_plus', productId: 'plus', unitAmount: 1200, interval: 'month', trialPeriodDays: 7 }
+];
 
 export default async function PricingPage() {
-  const [prices, products] = await Promise.all([
-    getStripePrices(),
-    getStripeProducts(),
-  ]);
+  let prices, products;
+  
+  try {
+    // Try to get real data from Stripe
+    [prices, products] = await Promise.all([
+      getStripePrices(),
+      getStripeProducts(),
+    ]);
+  } catch (error) {
+    // Fallback to mock data if Stripe is unavailable
+    console.warn('Stripe unavailable, using fallback pricing data');
+    prices = fallbackPrices;
+    products = fallbackProducts;
+  }
 
   const basePlan = products.find((product) => product.name === 'Base');
   const plusPlan = products.find((product) => product.name === 'Plus');
