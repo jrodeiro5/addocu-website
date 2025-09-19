@@ -137,8 +137,10 @@ function PricingCard({
   disabled?: boolean;
 }) {
   return (
-    <div className={`relative pt-6 ${isPopular ? 'ring-2 ring-opacity-60 rounded-lg' : ''}`} 
-         style={isPopular ? { ringColor: '#1A5DBB' } : {}}>
+    <div 
+      className={`relative pt-6 rounded-lg ${isPopular ? 'border-2' : 'border border-gray-200'}`}
+      style={isPopular ? { borderColor: '#1A5DBB' } : {}}
+    >
       {isPopular && (
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <span className="inline-flex px-4 py-1 rounded-full text-sm font-medium text-white" 
