@@ -1,4 +1,4 @@
-import { LogoCarousel, customerLogos, agencyLogos, placeholderLogos } from '@/components/marketing';
+import { LogoCarousel, customerLogos, agencyLogos, placeholderLogos, type LogoItem } from '@/components/marketing';
 
 // Ejemplo 1: Carrusel básico para página principal
 export function BasicLogoCarousel() {

@@ -1,7 +1,15 @@
-import { createLogoArray } from './logo-carousel';
+// Logo data for Addocu marketing components
+// Simple arrays that can be used in both server and client components
+
+export interface LogoItem {
+  name: string;
+  logo: string;
+  width?: number;
+  height?: number;
+}
 
 // Logo URLs for companies - these should be replaced with actual customer logos
-export const customerLogos = createLogoArray([
+export const customerLogos: LogoItem[] = [
   {
     name: 'HubSpot',
     logo: 'https://www.hubspot.com/hubfs/HubSpot_Logos/HubSpot-Inversed-Favicon.png',
@@ -50,10 +58,10 @@ export const customerLogos = createLogoArray([
     width: 120,
     height: 40
   }
-]);
+];
 
 // Alternative set for demonstration
-export const agencyLogos = createLogoArray([
+export const agencyLogos: LogoItem[] = [
   {
     name: 'Google',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg',
@@ -90,44 +98,44 @@ export const agencyLogos = createLogoArray([
     width: 40,
     height: 40
   }
-]);
+];
 
-// Placeholder logos for development - use simple colored rectangles
-export const placeholderLogos = createLogoArray([
+// Placeholder logos for development - use simple SVG placeholders
+export const placeholderLogos: LogoItem[] = [
   {
     name: 'Company A',
-    logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0iIzFBNURCQiIvPgo8dGV4dCB4PSI2MCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNvbXBhbnkgQTwvdGV4dD4KPHN2Zz4K',
+    logo: 'https://via.placeholder.com/120x40/1A5DBB/FFFFFF?text=Company+A',
     width: 120,
     height: 40
   },
   {
     name: 'Company B',
-    logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0iIzRDQUY1MCIvPgo8dGV4dCB4PSI2MCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNvbXBhbnkgQjwvdGV4dD4KPHN2Zz4K',
+    logo: 'https://via.placeholder.com/120x40/4CAF50/FFFFFF?text=Company+B',
     width: 120,
     height: 40
   },
   {
     name: 'Company C',
-    logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0iIzAwQUVFRiIvPgo8dGV4dCB4PSI2MCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNvbXBhbnkgQzwvdGV4dD4KPHN2Zz4K',
+    logo: 'https://via.placeholder.com/120x40/00AEEF/FFFFFF?text=Company+C',
     width: 120,
     height: 40
   },
   {
     name: 'Company D',
-    logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0iIzhCQzM0QSIvPgo8dGV4dCB4PSI2MCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNvbXBhbnkgRDwvdGV4dD4KPHN2Zz4K',
+    logo: 'https://via.placeholder.com/120x40/8BC34A/FFFFFF?text=Company+D',
     width: 120,
     height: 40
   },
   {
     name: 'Company E',
-    logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0iIzY2NjY2NiIvPgo8dGV4dCB4PSI2MCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNvbXBhbnkgRTwvdGV4dD4KPHN2Zz4K',
+    logo: 'https://via.placeholder.com/120x40/666666/FFFFFF?text=Company+E',
     width: 120,
     height: 40
   },
   {
     name: 'Company F',
-    logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0iI0ZGNkY2MSIvPgo8dGV4dCB4PSI2MCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNvbXBhbnkgRjwvdGV4dD4KPHN2Zz4K',
+    logo: 'https://via.placeholder.com/120x40/FF6F61/FFFFFF?text=Company+F',
     width: 120,
     height: 40
   }
-]);
+];

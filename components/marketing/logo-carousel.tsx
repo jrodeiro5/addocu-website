@@ -1,13 +1,7 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-
-interface LogoItem {
-  name: string;
-  logo: string;
-  width?: number;
-  height?: number;
-}
+import { useEffect, useRef, useState } from 'react';
+import type { LogoItem } from './logo-data';
 
 interface LogoCarouselProps {
   title?: string;
@@ -25,8 +19,16 @@ export function LogoCarousel({
   className = ""
 }: LogoCarouselProps) {
   const trackRef = useRef<HTMLDivElement>(null);
+  const [isClient, setIsClient] = useState(false);
+
+  // Ensure we're on the client side
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
+    if (!isClient) return;
+    
     const track = trackRef.current;
     if (!track) return;
 
@@ -46,7 +48,30 @@ export function LogoCarousel({
       track.removeEventListener('mouseenter', handleMouseEnter);
       track.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, []);
+  }, [isClient]);
+
+  // Don't render until we're on the client
+  if (!isClient) {
+    return (
+      <section className={`py-16 bg-gray-50 ${className}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-2">
+              {title}
+            </h2>
+            {subtitle && (
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                {subtitle}
+              </p>
+            )}
+          </div>
+          <div className="flex justify-center items-center h-12">
+            <div className="animate-pulse bg-gray-300 h-8 w-32 rounded" />
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className={`py-16 bg-gray-50 ${className}`}>
@@ -115,6 +140,3 @@ export function LogoCarousel({
     </section>
   );
 }
-
-// Componente helper para crear fácilmente arrays de logos
-export const createLogoArray = (logos: LogoItem[]): LogoItem[] => logos;

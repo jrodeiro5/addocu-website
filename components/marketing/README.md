@@ -58,16 +58,16 @@ import { customerLogos, agencyLogos } from '@/components/marketing';
 
 2. **Crear logos personalizados:**
 ```tsx
-import { createLogoArray } from '@/components/marketing';
+import type { LogoItem } from '@/components/marketing';
 
-const myLogos = createLogoArray([
+const myLogos: LogoItem[] = [
   {
     name: 'Mi Empresa',
     logo: '/path/to/logo.svg',
     width: 120,
     height: 40
   }
-]);
+];
 
 <LogoCarousel logos={myLogos} />
 ```
