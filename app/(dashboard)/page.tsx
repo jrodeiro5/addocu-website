@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, BarChart3, FileSpreadsheet, Settings } from 'lucide-react';
 import { Terminal } from './terminal';
+import { LogoCarousel, placeholderLogos } from '@/components/marketing';
 
 export default function HomePage() {
   return (
@@ -91,6 +92,14 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Logo Carousel Section */}
+      <LogoCarousel
+        title="Trusted by digital marketing teams"
+        subtitle="Join hundreds of marketers who save hours every month with automated auditing"
+        logos={placeholderLogos}
+        speed={35}
+      />
 
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
