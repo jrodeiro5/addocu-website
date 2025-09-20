@@ -1,0 +1,8 @@
+<!-- Google Tag Manager Logo SVG -->
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="32" height="32" rx="6" fill="#246FDB"/>
+  <path d="M8 8h16v16H8V8z" fill="white"/>
+  <path d="M10 10v12h12V10H10zm2 2h8v8h-8v-8z" fill="#246FDB"/>
+  <path d="M14 14h4v4h-4v-4z" fill="white"/>
+  <text x="16" y="18" text-anchor="middle" fill="#246FDB" font-family="Arial" font-size="6" font-weight="bold">TAG</text>
+</svg>

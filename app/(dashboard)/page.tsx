@@ -1,8 +1,9 @@
 import { Button } from '@/components/ui/button';
-import { ArrowRight, BarChart3, FileSpreadsheet, Settings } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Terminal } from './terminal';
 import { realCustomerLogos } from '@/components/marketing/real-logo-data';
 import { OptimizedLogoCarousel } from '@/components/marketing/optimized-logo-carousel';
+import { GoogleToolsSection } from '@/components/marketing/google-tools-section-final';
 
 export default function HomePage() {
   return (
@@ -43,56 +44,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-16 bg-white w-full">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:grid lg:grid-cols-3 lg:gap-8">
-            <div>
-              <div className="flex items-center justify-center h-12 w-12 rounded-md bg-[#1A5DBB] text-white">
-                <BarChart3 className="h-6 w-6" />
-              </div>
-              <div className="mt-5">
-                <h2 className="text-lg font-medium text-gray-900">
-                  Google Analytics 4 Complete Audit
-                </h2>
-                <p className="mt-2 text-base text-gray-500">
-                  Full inventory of GA4 properties, custom dimensions, conversion events, 
-                  audiences, and data retention settings with detailed configuration.
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-10 lg:mt-0">
-              <div className="flex items-center justify-center h-12 w-12 rounded-md bg-[#4CAF50] text-white">
-                <Settings className="h-6 w-6" />
-              </div>
-              <div className="mt-5">
-                <h2 className="text-lg font-medium text-gray-900">
-                  Google Tag Manager Deep Dive
-                </h2>
-                <p className="mt-2 text-base text-gray-500">
-                  Complete mapping of containers, tags, triggers, and variables with 
-                  firing status, version comparison, and workspace analysis.
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-10 lg:mt-0">
-              <div className="flex items-center justify-center h-12 w-12 rounded-md bg-[#00AEEF] text-white">
-                <FileSpreadsheet className="h-6 w-6" />
-              </div>
-              <div className="mt-5">
-                <h2 className="text-lg font-medium text-gray-900">
-                  Looker Studio Census
-                </h2>
-                <p className="mt-2 text-base text-gray-500">
-                  Report inventory with owners, sharing settings, data sources, 
-                  refresh status, and usage statistics for complete visibility.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Google Tools Section with Real Logos */}
+      <GoogleToolsSection />
 
       {/* Optimized Logo Carousel Section */}
       <OptimizedLogoCarousel

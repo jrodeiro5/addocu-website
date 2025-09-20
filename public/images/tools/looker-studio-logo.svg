@@ -1,0 +1,10 @@
+<!-- Looker Studio Logo SVG -->
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="32" height="32" rx="6" fill="#4285F4"/>
+  <path d="M6 12h20v2H6v-2zm0 4h20v2H6v-2zm0 4h20v2H6v-2z" fill="white"/>
+  <circle cx="8" cy="10" r="1" fill="white"/>
+  <circle cx="11" cy="10" r="1" fill="white"/>
+  <circle cx="14" cy="10" r="1" fill="white"/>
+  <rect x="18" y="8" width="6" height="4" rx="1" fill="white"/>
+  <path d="M10 22l6-6h6l-6 6h-6z" fill="white"/>
+</svg>
