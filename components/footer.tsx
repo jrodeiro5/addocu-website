@@ -8,10 +8,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#1A5DBB] to-[#00AEEF] rounded-lg flex items-center justify-center">
-                <div className="w-5 h-5 border-2 border-white rounded-sm"></div>
-              </div>
+            <div className="flex items-center space-x-3 mb-4">
+              <img 
+                src="/images/logos/addocu/addocu_logo.webp" 
+                alt="Addocu Logo" 
+                className="h-10 w-auto"
+              />
               <span className="text-xl font-semibold text-gray-900">Addocu</span>
             </div>
             <p className="text-sm text-gray-600 mb-4">

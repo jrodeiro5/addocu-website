@@ -21,10 +21,12 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 function AddocuLogo() {
   return (
-    <div className="flex items-center space-x-2">
-      <div className="w-8 h-8 bg-gradient-to-br from-[#1A5DBB] to-[#00AEEF] rounded-lg flex items-center justify-center">
-        <div className="w-5 h-5 border-2 border-white rounded-sm"></div>
-      </div>
+    <div className="flex items-center space-x-3">
+      <img 
+        src="/images/logos/addocu/addocu_logo.webp" 
+        alt="Addocu Logo" 
+        className="h-10 w-auto"
+      />
       <span className="text-xl font-semibold text-gray-900">Addocu</span>
     </div>
   );
