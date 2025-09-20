@@ -67,7 +67,7 @@ export function OptimizedLogoCarousel({
           )}
         </div>
 
-        {/* Optimized Logo Carousel - Perfect for transparent logos */}
+        {/* Clean Logo Carousel - No shadows, just like Pull & Bear */}
         <div className="relative overflow-hidden">
           <div 
             className="flex animate-scroll"
@@ -82,18 +82,15 @@ export function OptimizedLogoCarousel({
               {expandedLogos.map((logo, index) => (
                 <div 
                   key={`first-${index}`}
-                  className="flex items-center justify-center h-16 opacity-80 hover:opacity-100 transition-all duration-300 flex-shrink-0 hover:scale-105"
+                  className="flex items-center justify-center h-16 opacity-80 hover:opacity-100 transition-opacity duration-300 flex-shrink-0"
                 >
                   <Image
                     src={logo.logo}
                     alt={`${logo.name} - using Addocu for Google marketing audits`}
                     width={(logo.width || 120) * 1.4} // 40% bigger
                     height={(logo.height || 40) * 1.4} // 40% bigger
-                    className="max-h-12 w-auto transition-all duration-300"
+                    className="max-h-12 w-auto transition-opacity duration-300"
                     priority={index < 3}
-                    style={{
-                      filter: 'drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))'
-                    }}
                     onError={(e) => {
                       const target = e.currentTarget;
                       target.style.display = 'none';
@@ -108,18 +105,15 @@ export function OptimizedLogoCarousel({
               {expandedLogos.map((logo, index) => (
                 <div 
                   key={`second-${index}`}
-                  className="flex items-center justify-center h-16 opacity-80 hover:opacity-100 transition-all duration-300 flex-shrink-0 hover:scale-105"
+                  className="flex items-center justify-center h-16 opacity-80 hover:opacity-100 transition-opacity duration-300 flex-shrink-0"
                 >
                   <Image
                     src={logo.logo}
                     alt={`${logo.name} - using Addocu for Google marketing audits`}
                     width={(logo.width || 120) * 1.4}
                     height={(logo.height || 40) * 1.4}
-                    className="max-h-12 w-auto transition-all duration-300"
+                    className="max-h-12 w-auto transition-opacity duration-300"
                     loading="lazy"
-                    style={{
-                      filter: 'drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))'
-                    }}
                     onError={(e) => {
                       const target = e.currentTarget;
                       target.style.display = 'none';
@@ -131,7 +125,7 @@ export function OptimizedLogoCarousel({
           </div>
         </div>
 
-        {/* Social proof text with adjusted numbers */}
+        {/* Social proof text */}
         <div className="text-center mt-8">
           <p className="text-sm text-gray-500">
             Join 100+ marketing professionals who save hours every month with automated auditing
