@@ -67,7 +67,7 @@ export function OptimizedLogoCarousel({
           )}
         </div>
 
-        {/* Clean Logo Carousel - No shadows, just like Pull & Bear */}
+        {/* Clean Logo Carousel - Perfect for transparent backgrounds */}
         <div className="relative overflow-hidden">
           <div 
             className="flex animate-scroll"
