@@ -8,13 +8,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-1">
-            <div className="flex items-center space-x-3 mb-4">
+            <div className="mb-4">
               <img 
                 src="/images/logos/addocu/addocu_logo.webp" 
                 alt="Addocu Logo" 
                 className="h-10 w-auto"
               />
-              <span className="text-xl font-semibold text-gray-900">Addocu</span>
             </div>
             <p className="text-sm text-gray-600 mb-4">
               Audit and Document Your Google Marketing Stack in Seconds
